@@ -22,6 +22,9 @@ CoNLL format, with each character and its label split by a whitespace in a line.
 The POS tag and relative position embeddings are randomly initialized, while the word embedding, char embedding and bichar embedding are the same with [Lattice LSTM](https://www.aclweb.org/anthology/P18-1144/)
 
 ### Run the code:
-1. Download the character embeddings and word embeddings from [Lattice LSTM](https://www.aclweb.org/anthology/P18-1144/) and put them in the data folder.
-2. Download the four datasets in data/MSRANER, data/OntoNotesNER, data/ResumeNER and data/WeiboNER, respectively.
-3. To train on the four datasets:
+1. Download the character embeddings and word embeddings from [Lattice LSTM](https://www.aclweb.org/anthology/P18-1144/) and put them in the `data` folder.
+2. Download your datasets and put them in the `data` folder.
+3. To train on the dataset:
+```
+python main.py --model_type MODEL_TYPE --train TRAIN_FILE_PATH --dev DEV_FILE_PATH --test TEST_FILE_PATH --model_path MODEL_PATH --modelname MODEL_NAME --savedset DATASET_SAVE_PATH --num_iter NUM_ITER --seed SEED --hidden_dim HIDDEN_DIM --batch_size BATCH_SIZE --drop DROP --lr LR  
+```
